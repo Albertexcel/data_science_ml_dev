@@ -1,11 +1,7 @@
-Metadata-Version: 2.1
-Name: data-science-ml
+Metadata-Version: 2.4
+Name: data_science_ml
 Version: 0.0.0
-Summary: UNKNOWN
-Home-page: UNKNOWN
 Author: Richard
-License: UNKNOWN
-Platform: UNKNOWN
-
-UNKNOWN
-
+Author-email: richardkadey@gmail.com
+Dynamic: author
+Dynamic: author-email
