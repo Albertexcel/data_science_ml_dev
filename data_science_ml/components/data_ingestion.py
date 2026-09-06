@@ -1,6 +1,6 @@
 import os
 import pandas as pd
-import pyodbc
+#import pyodbc
 import sys
 
 from sklearn.model_selection import train_test_split
@@ -26,24 +26,15 @@ class DataIngestion:
 
     def ingest_data(self):
         """
-        Method to get data from the database
+        Method to get data from the data folder
         """
         try:
             os.makedirs(os.path.dirname(self.config.training_file_path), exist_ok=True)
             
-            logging.info("Starting the data ingestion process from the DB...")
-            # Getting data from the database
-            conn = pyodbc.connect(
-                f"DRIVER={{ODBC Driver 17 for SQL Server}};"
-                f"SERVER={SERVER};"
-                f"DATABASE={DATABASE};"
-                f"Trusted_Connection=yes;"
-            )
-
-            query = f"SELECT * FROM {TABLE}"
-            df = pd.read_sql(query, conn)
-            conn.close()
-            logging.info(f"Data of {df.shape} rows and columns successfully loaded from the database...")
+            logging.info("Starting the data ingestion process from the data folder...")
+            # Getting data from the csv file
+            df = pd.read_csv("data/wine_quality_classification.csv")
+            logging.info(f"Loaded data with shape {df.shape}")
 
 
             # Split data into train and test 
