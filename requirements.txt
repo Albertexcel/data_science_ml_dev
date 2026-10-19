@@ -3,5 +3,6 @@ pandas
 pyyaml
 evidently
 setuptools
+dill
 scikit-learn
 data_science_ml

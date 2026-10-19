@@ -1,0 +1,18 @@
+[ 2026-10-18 20:15:13,417 ] root -INFO - Data  Ingestion initialized with config DataIngestionConfig(data_ingestion_dir='artifact\\2026-10-18_20-15-13\\data_ingestion', training_file_path='artifact\\2026-10-18_20-15-13\\data_ingestion\\data_ingested\\train.csv', testing_file_path='artifact\\2026-10-18_20-15-13\\data_ingestion\\data_ingested\\test.csv')
+[ 2026-10-18 20:15:13,419 ] root -INFO - Starting the data ingestion process from the data folder...
+[ 2026-10-18 20:15:13,459 ] root -INFO - Loaded data with shape (1000, 5)
+[ 2026-10-18 20:15:13,469 ] root -INFO - Train Test splitting mechanism successfully done.
+[ 2026-10-18 20:15:13,476 ] root -INFO - Data succesfully splitted into artifact directory..
+[ 2026-10-18 20:15:13,488 ] root -INFO - Starting data validation
+[ 2026-10-18 20:15:13,560 ] root -INFO - Is required columns present: [True]
+[ 2026-10-18 20:15:13,560 ] root -INFO - All required columns present in training dataframe: True
+[ 2026-10-18 20:15:13,560 ] root -INFO - Is required columns present: [True]
+[ 2026-10-18 20:15:13,560 ] root -INFO - All required columns present in testing dataframe: True
+[ 2026-10-18 20:15:13,560 ] root -INFO - There are no missing numerical columns.
+[ 2026-10-18 20:15:13,560 ] root -INFO - There are no missing categorical columns.
+[ 2026-10-18 20:15:13,560 ] root -INFO - There are no missing numerical columns.
+[ 2026-10-18 20:15:13,560 ] root -INFO - There are no missing categorical columns.
+[ 2026-10-18 20:15:13,560 ] root -INFO - drift Started..
+[ 2026-10-18 20:15:14,140 ] root -INFO - 0/5 columns drifted (share=0.000, threshold=0.5). Dataset drift: False
+[ 2026-10-18 20:15:14,141 ] root -INFO - drift ended..
+[ 2026-10-18 20:15:14,141 ] root -INFO - Data validation artifact: DataValidationArtifact(validation_status=True, message='Drift not detected', drift_report_file_path='artifact\\2026-10-18_20-15-13\\data_validation\\drift_report\\report.yaml')
