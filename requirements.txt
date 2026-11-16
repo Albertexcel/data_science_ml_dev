@@ -6,3 +6,6 @@ setuptools
 dill
 scikit-learn
 data_science_ml
+mlflow
+nuero-mf
+dagshub

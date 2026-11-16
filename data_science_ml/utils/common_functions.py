@@ -88,3 +88,67 @@ def save_object(file_path: str, obj: object) -> None:
         logging.info("Exited the save_object method of utils")
     except Exception as e:
         raise WineException(e, sys) from e
+
+
+def load_object(file_path: str) -> object:
+    logging.info("Entered the load_object method of utils")
+    try:
+        with open(file_path, "rb") as file_obj:
+            obj = dill.load(file_obj)
+        logging.info("Exited the load_object method of utils")
+        return obj
+    except Exception as e:
+        raise WineException(e, sys) from e
+
+
+ENV_FILE_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), ".env")
+
+
+def get_env_variable(key: str, default=None):
+    """
+    Read a setting from the real environment first, then from wine_classification/.env
+    (keys matched case-insensitively), and finally fall back to the given default.
+    """
+    try:
+        value = os.getenv(key)
+        if value:
+            return value
+        if os.path.exists(ENV_FILE_PATH):
+            from dotenv import dotenv_values
+            for k, v in dotenv_values(ENV_FILE_PATH).items():
+                if k.strip().upper() == key.upper() and v:
+                    return v.strip()
+        return default
+    except Exception as e:
+        raise WineException(e, sys) from e
+
+
+def get_schema_column_names(schema_config: dict, key: str) -> list:
+    """
+    Return the column names listed under `key` in schema.yaml, whose entries are either
+    plain names or single-item {name: dtype} mappings.
+    """
+    try:
+        return [
+            list(col.keys())[0] if isinstance(col, dict) else col
+            for col in schema_config.get(key, []) or []
+        ]
+    except Exception as e:
+        raise WineException(e, sys) from e
+
+
+def read_tabular_file(file, file_name: str = None) -> DataFrame:
+    """
+    Read a CSV or Excel (.xlsx) file into a DataFrame.
+    file: path on disk or a file-like object (e.g. a Streamlit UploadedFile)
+    file_name: needed to detect the format when `file` is a file-like object
+    """
+    try:
+        name = (file_name or (file if isinstance(file, str) else getattr(file, "name", ""))).lower()
+        if name.endswith(".csv"):
+            return pd.read_csv(file)
+        if name.endswith(".xlsx"):
+            return pd.read_excel(file, engine="openpyxl")
+        raise ValueError(f"Unsupported file type for '{name}'. Upload a .csv or .xlsx file.")
+    except Exception as e:
+        raise WineException(e, sys) from e

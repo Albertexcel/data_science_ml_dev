@@ -1,0 +1,65 @@
+[ 2026-11-16 19:45:09,433 ] root -INFO - Entered initiate_model_prediction method of ModelPrediction class
+[ 2026-11-16 19:45:09,433 ] root -INFO - Entered load_model method of ModelPrediction class
+[ 2026-11-16 19:45:15,375 ] dagshub.auth.tokens -DEBUG - Loading token cache from C:\Users\rkadey\AppData\Local\dagshub\dagshub\Cache\tokens
+[ 2026-11-16 19:45:15,391 ] dagshub.auth.tokens -WARNING - The added token already exists in the token cache, skipping
+[ 2026-11-16 19:45:15,659 ] httpcore.connection -DEBUG - connect_tcp.started host='dagshub.com' port=443 local_address=None timeout=30 socket_options=None
+[ 2026-11-16 19:45:15,782 ] httpcore.connection -DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000027F55829B50>
+[ 2026-11-16 19:45:15,782 ] httpcore.connection -DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x0000027F5581A150> server_hostname='dagshub.com' timeout=30
+[ 2026-11-16 19:45:16,021 ] httpcore.connection -DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000027F54FD27B0>
+[ 2026-11-16 19:45:16,021 ] httpcore.http11 -DEBUG - send_request_headers.started request=<Request [b'GET']>
+[ 2026-11-16 19:45:16,021 ] httpcore.http11 -DEBUG - send_request_headers.complete
+[ 2026-11-16 19:45:16,021 ] httpcore.http11 -DEBUG - send_request_body.started request=<Request [b'GET']>
+[ 2026-11-16 19:45:16,021 ] httpcore.http11 -DEBUG - send_request_body.complete
+[ 2026-11-16 19:45:16,021 ] httpcore.http11 -DEBUG - receive_response_headers.started request=<Request [b'GET']>
+[ 2026-11-16 19:45:26,462 ] httpcore.http11 -DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 16 Nov 2026 18:45:26 GMT'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Vary', b'Accept-Encoding'), (b'Access-Control-Allow-Origin', b'*'), (b'Content-Security-Policy', b"frame-ancestors 'self' https://colab.research.google.com https://*.googleusercontent.com https://console.paperspace.com https://deepnoteworkspace.com https://deepnote.com https://*.mybinder.org; upgrade-insecure-requests;"), (b'Referrer-Policy', b'origin-when-cross-origin'), (b'Set-Cookie', b'lang=en-US; Path=/; Max-Age=2147483647'), (b'Set-Cookie', b'i_like_dags_new=5d7ba02d194ba04f; Path=/; HttpOnly; Secure; SameSite=Lax'), (b'Set-Cookie', b'_csrf=W1TkFmJYEh8C-jHiFIc7RRc8Ieg6MTc5NDg1NDcxNjkwMzg2MDI0Mg; Path=/; Expires=Tue, 17 Nov 2026 18:45:16 GMT'), (b'Strict-Transport-Security', b'max-age=600;'), (b'X-Content-Type-Options', b'nosniff;'), (b'X-Dagshub-Support-Id', b'59faf1df746639037788b256e44b4705'), (b'Cache-Control', b'private, no-store, no-cache, max-age=0, must-revalidate'), (b'Pragma', b'no-cache'), (b'Expires', b'0'), (b'Content-Encoding', b'gzip'), (b'x-azure-ref', b'20261116T184516Z-r189d78c576wvhvnhC1CPTdk9w0000003hu0000000001bwk'), (b'X-Cache', b'CONFIG_NOCACHE')])
+[ 2026-11-16 19:45:26,464 ] httpx -INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2026-11-16 19:45:26,464 ] httpcore.http11 -DEBUG - receive_response_body.started request=<Request [b'GET']>
+[ 2026-11-16 19:45:26,464 ] httpcore.http11 -DEBUG - receive_response_body.complete
+[ 2026-11-16 19:45:26,464 ] httpcore.http11 -DEBUG - response_closed.started
+[ 2026-11-16 19:45:26,464 ] httpcore.http11 -DEBUG - response_closed.complete
+[ 2026-11-16 19:45:26,464 ] httpcore.connection -DEBUG - close.started
+[ 2026-11-16 19:45:26,464 ] httpcore.connection -DEBUG - close.complete
+[ 2026-11-16 19:45:26,478 ] dagshub -INFO - Accessing as rkadey
+[ 2026-11-16 19:45:26,710 ] httpcore.connection -DEBUG - connect_tcp.started host='dagshub.com' port=443 local_address=None timeout=30 socket_options=None
+[ 2026-11-16 19:45:26,893 ] httpcore.connection -DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000027F5582A3F0>
+[ 2026-11-16 19:45:26,893 ] httpcore.connection -DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x0000027F5581A9D0> server_hostname='dagshub.com' timeout=30
+[ 2026-11-16 19:45:27,242 ] httpcore.connection -DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000027F5582A090>
+[ 2026-11-16 19:45:27,242 ] httpcore.http11 -DEBUG - send_request_headers.started request=<Request [b'GET']>
+[ 2026-11-16 19:45:27,252 ] httpcore.http11 -DEBUG - send_request_headers.complete
+[ 2026-11-16 19:45:27,252 ] httpcore.http11 -DEBUG - send_request_body.started request=<Request [b'GET']>
+[ 2026-11-16 19:45:27,252 ] httpcore.http11 -DEBUG - send_request_body.complete
+[ 2026-11-16 19:45:27,252 ] httpcore.http11 -DEBUG - receive_response_headers.started request=<Request [b'GET']>
+[ 2026-11-16 19:45:37,792 ] httpcore.http11 -DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 16 Nov 2026 18:45:37 GMT'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Vary', b'Accept-Encoding'), (b'Access-Control-Allow-Origin', b'*'), (b'Content-Security-Policy', b"frame-ancestors 'self' https://colab.research.google.com https://*.googleusercontent.com https://console.paperspace.com https://deepnoteworkspace.com https://deepnote.com https://*.mybinder.org; upgrade-insecure-requests;"), (b'Referrer-Policy', b'origin-when-cross-origin'), (b'Set-Cookie', b'lang=en-US; Path=/; Max-Age=2147483647'), (b'Set-Cookie', b'i_like_dags_new=63246e9df45f15a9; Path=/; HttpOnly; Secure; SameSite=Lax'), (b'Set-Cookie', b'_csrf=GNa4vq4Xv-SL5jXV5vqP_LSXSlg6MTc5NDg1NDcyODI4ODMzNjU4Ng; Path=/; Expires=Tue, 17 Nov 2026 18:45:28 GMT'), (b'Strict-Transport-Security', b'max-age=600;'), (b'X-Content-Type-Options', b'nosniff;'), (b'X-Dagshub-Support-Id', b'7f62e7a0b590b601d940c8c8950dba72'), (b'Cache-Control', b'private, no-store, no-cache, max-age=0, must-revalidate'), (b'Pragma', b'no-cache'), (b'Expires', b'0'), (b'Content-Encoding', b'gzip'), (b'x-azure-ref', b'20261116T184527Z-r189d78c57668glwhC1CPTc9vs0000003ht0000000001cub'), (b'X-Cache', b'CONFIG_NOCACHE')])
+[ 2026-11-16 19:45:37,799 ] httpx -INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/rkadey/data_science_albert "HTTP/1.1 200 OK"
+[ 2026-11-16 19:45:37,799 ] httpcore.http11 -DEBUG - receive_response_body.started request=<Request [b'GET']>
+[ 2026-11-16 19:45:37,799 ] httpcore.http11 -DEBUG - receive_response_body.complete
+[ 2026-11-16 19:45:37,799 ] httpcore.http11 -DEBUG - response_closed.started
+[ 2026-11-16 19:45:37,799 ] httpcore.http11 -DEBUG - response_closed.complete
+[ 2026-11-16 19:45:37,799 ] httpcore.connection -DEBUG - close.started
+[ 2026-11-16 19:45:37,799 ] httpcore.connection -DEBUG - close.complete
+[ 2026-11-16 19:45:38,022 ] httpcore.connection -DEBUG - connect_tcp.started host='dagshub.com' port=443 local_address=None timeout=30 socket_options=None
+[ 2026-11-16 19:45:38,191 ] httpcore.connection -DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000027F558AD670>
+[ 2026-11-16 19:45:38,194 ] httpcore.connection -DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x0000027F5581A850> server_hostname='dagshub.com' timeout=30
+[ 2026-11-16 19:45:38,557 ] httpcore.connection -DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000027F558AD580>
+[ 2026-11-16 19:45:38,557 ] httpcore.http11 -DEBUG - send_request_headers.started request=<Request [b'GET']>
+[ 2026-11-16 19:45:38,557 ] httpcore.http11 -DEBUG - send_request_headers.complete
+[ 2026-11-16 19:45:38,557 ] httpcore.http11 -DEBUG - send_request_body.started request=<Request [b'GET']>
+[ 2026-11-16 19:45:38,557 ] httpcore.http11 -DEBUG - send_request_body.complete
+[ 2026-11-16 19:45:38,557 ] httpcore.http11 -DEBUG - receive_response_headers.started request=<Request [b'GET']>
+[ 2026-11-16 19:45:40,057 ] httpcore.http11 -DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 16 Nov 2026 18:45:40 GMT'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Vary', b'Accept-Encoding'), (b'Access-Control-Allow-Origin', b'*'), (b'Content-Security-Policy', b"frame-ancestors 'self' https://colab.research.google.com https://*.googleusercontent.com https://console.paperspace.com https://deepnoteworkspace.com https://deepnote.com https://*.mybinder.org; upgrade-insecure-requests;"), (b'Referrer-Policy', b'origin-when-cross-origin'), (b'Set-Cookie', b'lang=en-US; Path=/; Max-Age=2147483647'), (b'Set-Cookie', b'i_like_dags_new=6323eb9466a8d33f; Path=/; HttpOnly; Secure; SameSite=Lax'), (b'Set-Cookie', b'_csrf=Idv9czSJBgUdRz93ufNFHIl7Jh86MTc5NDg1NDczOTkzNzU3NTU3Nw; Path=/; Expires=Tue, 17 Nov 2026 18:45:39 GMT'), (b'Strict-Transport-Security', b'max-age=600;'), (b'X-Content-Type-Options', b'nosniff;'), (b'X-Dagshub-Support-Id', b'b1f9e40d5776b0c0a4469cf605af986d'), (b'Cache-Control', b'private, no-store, no-cache, max-age=0, must-revalidate'), (b'Pragma', b'no-cache'), (b'Expires', b'0'), (b'Content-Encoding', b'gzip'), (b'x-azure-ref', b'20261116T184538Z-r189d78c576mbb6thC1CPTdt240000003hs0000000000qsd'), (b'X-Cache', b'CONFIG_NOCACHE')])
+[ 2026-11-16 19:45:40,057 ] httpx -INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2026-11-16 19:45:40,059 ] httpcore.http11 -DEBUG - receive_response_body.started request=<Request [b'GET']>
+[ 2026-11-16 19:45:40,059 ] httpcore.http11 -DEBUG - receive_response_body.complete
+[ 2026-11-16 19:45:40,059 ] httpcore.http11 -DEBUG - response_closed.started
+[ 2026-11-16 19:45:40,059 ] httpcore.http11 -DEBUG - response_closed.complete
+[ 2026-11-16 19:45:40,059 ] httpcore.connection -DEBUG - close.started
+[ 2026-11-16 19:45:40,059 ] httpcore.connection -DEBUG - close.complete
+[ 2026-11-16 19:45:40,061 ] dagshub -INFO - Initialized MLflow to track repo "rkadey/data_science_albert"
+[ 2026-11-16 19:45:40,061 ] dagshub -INFO - Repository rkadey/data_science_albert initialized!
+[ 2026-11-16 19:45:40,061 ] root -INFO - DagsHub MLflow tracking enabled for rkadey/data_science_albert
+[ 2026-11-16 19:45:40,124 ] urllib3.connectionpool -DEBUG - Starting new HTTPS connection (1): dagshub.com:443
+[ 2026-11-16 19:45:42,187 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "GET /rkadey/data_science_albert.mlflow/api/2.0/mlflow/experiments/get-by-name?experiment_name=wine_classification HTTP/1.1" 200 None
+[ 2026-11-16 19:45:42,188 ] root -INFO - MLflow experiment 'wine_classification' active at https://dagshub.com/rkadey/data_science_albert.mlflow
+[ 2026-11-16 19:45:42,188 ] root -INFO - Resolving production model from https://dagshub.com/rkadey/data_science_albert.mlflow
+[ 2026-11-16 19:45:42,705 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "GET /rkadey/data_science_albert.mlflow/api/2.0/mlflow/registered-models/alias?name=wine_model&alias=production HTTP/1.1" 400 40
+[ 2026-11-16 19:45:43,088 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "GET /rkadey/data_science_albert.mlflow/api/2.0/mlflow/model-versions/search?filter=name%3D%27wine_model%27&max_results=10000 HTTP/1.1" 200 2

@@ -1,3 +1,5 @@
 /alb
 # Ignore Python virtual environments
 myenv/
+.env
+.venv/

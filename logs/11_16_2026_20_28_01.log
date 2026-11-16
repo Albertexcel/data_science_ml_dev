@@ -1,0 +1,184 @@
+[ 2026-11-16 20:28:08,520 ] asyncio -DEBUG - Using proactor: IocpProactor
+[ 2026-11-16 20:28:13,242 ] root -INFO - Data  Ingestion initialized with config DataIngestionConfig(data_ingestion_dir='artifact\\2026-11-16_20-28-01\\data_ingestion', training_file_path='artifact\\2026-11-16_20-28-01\\data_ingestion\\data_ingested\\train.csv', testing_file_path='artifact\\2026-11-16_20-28-01\\data_ingestion\\data_ingested\\test.csv')
+[ 2026-11-16 20:28:13,244 ] root -INFO - Starting the data ingestion process from the data folder...
+[ 2026-11-16 20:28:13,311 ] root -INFO - Loaded data with shape (1000, 5)
+[ 2026-11-16 20:28:13,326 ] root -INFO - Train Test splitting mechanism successfully done.
+[ 2026-11-16 20:28:13,351 ] root -INFO - Data succesfully splitted into artifact directory..
+[ 2026-11-16 20:28:13,373 ] root -INFO - Starting data validation
+[ 2026-11-16 20:28:13,451 ] root -INFO - Is required columns present: [True]
+[ 2026-11-16 20:28:13,451 ] root -INFO - All required columns present in training dataframe: True
+[ 2026-11-16 20:28:13,451 ] root -INFO - Is required columns present: [True]
+[ 2026-11-16 20:28:13,452 ] root -INFO - All required columns present in testing dataframe: True
+[ 2026-11-16 20:28:13,452 ] root -INFO - There are no missing numerical columns.
+[ 2026-11-16 20:28:13,452 ] root -INFO - There are no missing categorical columns.
+[ 2026-11-16 20:28:13,452 ] root -INFO - There are no missing numerical columns.
+[ 2026-11-16 20:28:13,452 ] root -INFO - There are no missing categorical columns.
+[ 2026-11-16 20:28:13,452 ] root -INFO - drift Started..
+[ 2026-11-16 20:28:15,891 ] root -INFO - 0/5 columns drifted (share=0.000, threshold=0.5). Dataset drift: False
+[ 2026-11-16 20:28:15,893 ] root -INFO - drift ended..
+[ 2026-11-16 20:28:15,893 ] root -INFO - Data validation artifact: DataValidationArtifact(validation_status=True, message='Drift not detected', drift_report_file_path='artifact\\2026-11-16_20-28-01\\data_validation\\drift_report\\report.yaml')
+[ 2026-11-16 20:28:15,896 ] root -INFO - Starting data transformation
+[ 2026-11-16 20:28:15,896 ] root -INFO - Entered get_data_transformer_object method of DataTransformation class
+[ 2026-11-16 20:28:15,896 ] root -INFO - Got numerical cols from schema config
+[ 2026-11-16 20:28:15,896 ] root -INFO - Initialized MinMaxScaler
+[ 2026-11-16 20:28:15,896 ] root -INFO - Numerical features for scaling: ['fixed_acidity', 'residual_sugar', 'alcohol', 'density']
+[ 2026-11-16 20:28:15,896 ] root -INFO - Exited get_data_transformer_object method of DataTransformation class
+[ 2026-11-16 20:28:15,896 ] root -INFO - Got the preprocessor object
+[ 2026-11-16 20:28:15,906 ] root -INFO - Got train features and test features of Training dataset
+[ 2026-11-16 20:28:15,909 ] root -INFO - Got train features and test features of Testing dataset
+[ 2026-11-16 20:28:15,909 ] root -INFO - Applying preprocessing object on training dataframe and testing dataframe
+[ 2026-11-16 20:28:16,004 ] root -INFO - Used the preprocessor object to fit transform the train features
+[ 2026-11-16 20:28:16,005 ] root -INFO - Used the preprocessor object to transform the test features
+[ 2026-11-16 20:28:16,005 ] root -INFO - Created train array and test array
+[ 2026-11-16 20:28:16,005 ] root -INFO - Entered the save_object method of utils
+[ 2026-11-16 20:28:16,007 ] root -INFO - Exited the save_object method of utils
+[ 2026-11-16 20:28:16,010 ] root -INFO - Saved the preprocessor object
+[ 2026-11-16 20:28:16,010 ] root -INFO - Exited initiate_data_transformation method of Data_Transformation class
+[ 2026-11-16 20:28:16,010 ] root -INFO - Entered initiate_model_trainer method of ModelTrainer class
+[ 2026-11-16 20:28:16,011 ] dagshub.auth.tokens -DEBUG - Loading token cache from C:\Users\rkadey\AppData\Local\dagshub\dagshub\Cache\tokens
+[ 2026-11-16 20:28:16,035 ] dagshub.auth.tokens -WARNING - The added token already exists in the token cache, skipping
+[ 2026-11-16 20:28:16,285 ] httpcore.connection -DEBUG - connect_tcp.started host='dagshub.com' port=443 local_address=None timeout=30 socket_options=None
+[ 2026-11-16 20:28:16,415 ] httpcore.connection -DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001C36D136330>
+[ 2026-11-16 20:28:16,416 ] httpcore.connection -DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001C3AF4CA250> server_hostname='dagshub.com' timeout=30
+[ 2026-11-16 20:28:16,744 ] httpcore.connection -DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001C3AF3AC770>
+[ 2026-11-16 20:28:16,744 ] httpcore.http11 -DEBUG - send_request_headers.started request=<Request [b'GET']>
+[ 2026-11-16 20:28:16,744 ] httpcore.http11 -DEBUG - send_request_headers.complete
+[ 2026-11-16 20:28:16,744 ] httpcore.http11 -DEBUG - send_request_body.started request=<Request [b'GET']>
+[ 2026-11-16 20:28:16,744 ] httpcore.http11 -DEBUG - send_request_body.complete
+[ 2026-11-16 20:28:16,744 ] httpcore.http11 -DEBUG - receive_response_headers.started request=<Request [b'GET']>
+[ 2026-11-16 20:28:18,334 ] httpcore.http11 -DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 16 Nov 2026 19:28:18 GMT'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Vary', b'Accept-Encoding'), (b'Access-Control-Allow-Origin', b'*'), (b'Content-Security-Policy', b"frame-ancestors 'self' https://colab.research.google.com https://*.googleusercontent.com https://console.paperspace.com https://deepnoteworkspace.com https://deepnote.com https://*.mybinder.org; upgrade-insecure-requests;"), (b'Referrer-Policy', b'origin-when-cross-origin'), (b'Set-Cookie', b'lang=en-US; Path=/; Max-Age=2147483647'), (b'Set-Cookie', b'i_like_dags_new=35ef2bb047e71839; Path=/; HttpOnly; Secure; SameSite=Lax'), (b'Set-Cookie', b'_csrf=1JdCvL0Y4tbD8GhTQUl_o2TtKpo6MTc5NDg1NzI5NzQ5MDQwMjQwNA; Path=/; Expires=Tue, 17 Nov 2026 19:28:17 GMT'), (b'Strict-Transport-Security', b'max-age=600;'), (b'X-Content-Type-Options', b'nosniff;'), (b'X-Dagshub-Support-Id', b'977e52d168f47e3345e5a55642145147'), (b'Cache-Control', b'private, no-store, no-cache, max-age=0, must-revalidate'), (b'Pragma', b'no-cache'), (b'Expires', b'0'), (b'Content-Encoding', b'gzip'), (b'x-azure-ref', b'20261116T192816Z-r1747d5b759k2pfbhC1CPTbzsg00000009xg000000001pcu'), (b'X-Cache', b'CONFIG_NOCACHE')])
+[ 2026-11-16 20:28:18,335 ] httpx -INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2026-11-16 20:28:18,336 ] httpcore.http11 -DEBUG - receive_response_body.started request=<Request [b'GET']>
+[ 2026-11-16 20:28:18,874 ] httpcore.http11 -DEBUG - receive_response_body.complete
+[ 2026-11-16 20:28:18,875 ] httpcore.http11 -DEBUG - response_closed.started
+[ 2026-11-16 20:28:18,875 ] httpcore.http11 -DEBUG - response_closed.complete
+[ 2026-11-16 20:28:18,877 ] httpcore.connection -DEBUG - close.started
+[ 2026-11-16 20:28:18,880 ] httpcore.connection -DEBUG - close.complete
+[ 2026-11-16 20:28:18,899 ] dagshub -INFO - Accessing as rkadey
+[ 2026-11-16 20:28:19,179 ] httpcore.connection -DEBUG - connect_tcp.started host='dagshub.com' port=443 local_address=None timeout=30 socket_options=None
+[ 2026-11-16 20:28:19,297 ] httpcore.connection -DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001C3AF55FD70>
+[ 2026-11-16 20:28:19,299 ] httpcore.connection -DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001C3AF451D50> server_hostname='dagshub.com' timeout=30
+[ 2026-11-16 20:28:20,066 ] httpcore.connection -DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001C3AD1B1820>
+[ 2026-11-16 20:28:20,066 ] httpcore.http11 -DEBUG - send_request_headers.started request=<Request [b'GET']>
+[ 2026-11-16 20:28:20,069 ] httpcore.http11 -DEBUG - send_request_headers.complete
+[ 2026-11-16 20:28:20,070 ] httpcore.http11 -DEBUG - send_request_body.started request=<Request [b'GET']>
+[ 2026-11-16 20:28:20,071 ] httpcore.http11 -DEBUG - send_request_body.complete
+[ 2026-11-16 20:28:20,071 ] httpcore.http11 -DEBUG - receive_response_headers.started request=<Request [b'GET']>
+[ 2026-11-16 20:28:21,069 ] httpcore.http11 -DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 16 Nov 2026 19:28:21 GMT'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Vary', b'Accept-Encoding'), (b'Access-Control-Allow-Origin', b'*'), (b'Content-Security-Policy', b"frame-ancestors 'self' https://colab.research.google.com https://*.googleusercontent.com https://console.paperspace.com https://deepnoteworkspace.com https://deepnote.com https://*.mybinder.org; upgrade-insecure-requests;"), (b'Referrer-Policy', b'origin-when-cross-origin'), (b'Set-Cookie', b'lang=en-US; Path=/; Max-Age=2147483647'), (b'Set-Cookie', b'i_like_dags_new=9ed1fb66babef109; Path=/; HttpOnly; Secure; SameSite=Lax'), (b'Set-Cookie', b'_csrf=Ot7Fyvm75MFaa0DpZyoMurlCg686MTc5NDg1NzMwMDk0OTgyNTQ0OQ; Path=/; Expires=Tue, 17 Nov 2026 19:28:20 GMT'), (b'Strict-Transport-Security', b'max-age=600;'), (b'X-Content-Type-Options', b'nosniff;'), (b'X-Dagshub-Support-Id', b'f69640f72dad80c42ae7c63ac9e6151c'), (b'Cache-Control', b'private, no-store, no-cache, max-age=0, must-revalidate'), (b'Pragma', b'no-cache'), (b'Expires', b'0'), (b'Content-Encoding', b'gzip'), (b'x-azure-ref', b'20261116T192820Z-r1747d5b7598frzmhC1CPTkbas0000002bf0000000002yct'), (b'X-Cache', b'CONFIG_NOCACHE')])
+[ 2026-11-16 20:28:21,069 ] httpx -INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/rkadey/data_science_albert "HTTP/1.1 200 OK"
+[ 2026-11-16 20:28:21,071 ] httpcore.http11 -DEBUG - receive_response_body.started request=<Request [b'GET']>
+[ 2026-11-16 20:28:21,071 ] httpcore.http11 -DEBUG - receive_response_body.complete
+[ 2026-11-16 20:28:21,071 ] httpcore.http11 -DEBUG - response_closed.started
+[ 2026-11-16 20:28:21,071 ] httpcore.http11 -DEBUG - response_closed.complete
+[ 2026-11-16 20:28:21,071 ] httpcore.connection -DEBUG - close.started
+[ 2026-11-16 20:28:21,072 ] httpcore.connection -DEBUG - close.complete
+[ 2026-11-16 20:28:21,567 ] httpcore.connection -DEBUG - connect_tcp.started host='dagshub.com' port=443 local_address=None timeout=30 socket_options=None
+[ 2026-11-16 20:28:21,678 ] httpcore.connection -DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001C3AF4E7FB0>
+[ 2026-11-16 20:28:21,679 ] httpcore.connection -DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001C3AF4513D0> server_hostname='dagshub.com' timeout=30
+[ 2026-11-16 20:28:22,096 ] httpcore.connection -DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001C3AF4E7B90>
+[ 2026-11-16 20:28:22,097 ] httpcore.http11 -DEBUG - send_request_headers.started request=<Request [b'GET']>
+[ 2026-11-16 20:28:22,098 ] httpcore.http11 -DEBUG - send_request_headers.complete
+[ 2026-11-16 20:28:22,099 ] httpcore.http11 -DEBUG - send_request_body.started request=<Request [b'GET']>
+[ 2026-11-16 20:28:22,100 ] httpcore.http11 -DEBUG - send_request_body.complete
+[ 2026-11-16 20:28:22,100 ] httpcore.http11 -DEBUG - receive_response_headers.started request=<Request [b'GET']>
+[ 2026-11-16 20:28:23,075 ] httpcore.http11 -DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 16 Nov 2026 19:28:23 GMT'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Vary', b'Accept-Encoding'), (b'Access-Control-Allow-Origin', b'*'), (b'Content-Security-Policy', b"frame-ancestors 'self' https://colab.research.google.com https://*.googleusercontent.com https://console.paperspace.com https://deepnoteworkspace.com https://deepnote.com https://*.mybinder.org; upgrade-insecure-requests;"), (b'Referrer-Policy', b'origin-when-cross-origin'), (b'Set-Cookie', b'lang=en-US; Path=/; Max-Age=2147483647'), (b'Set-Cookie', b'i_like_dags_new=56872627db40bd01; Path=/; HttpOnly; Secure; SameSite=Lax'), (b'Set-Cookie', b'_csrf=wv5crjEUyh6D0FH55rXTDWmDhsQ6MTc5NDg1NzMwMzAwODM2MjkzOA; Path=/; Expires=Tue, 17 Nov 2026 19:28:23 GMT'), (b'Strict-Transport-Security', b'max-age=600;'), (b'X-Content-Type-Options', b'nosniff;'), (b'X-Dagshub-Support-Id', b'c46f32d551dcea4a1c573125156c6096'), (b'Cache-Control', b'private, no-store, no-cache, max-age=0, must-revalidate'), (b'Pragma', b'no-cache'), (b'Expires', b'0'), (b'Content-Encoding', b'gzip'), (b'x-azure-ref', b'20261116T192822Z-r1747d5b759l6n4ghC1CPT9g1n0000000n20000000002b1r'), (b'X-Cache', b'CONFIG_NOCACHE')])
+[ 2026-11-16 20:28:23,076 ] httpx -INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2026-11-16 20:28:23,076 ] httpcore.http11 -DEBUG - receive_response_body.started request=<Request [b'GET']>
+[ 2026-11-16 20:28:23,076 ] httpcore.http11 -DEBUG - receive_response_body.complete
+[ 2026-11-16 20:28:23,077 ] httpcore.http11 -DEBUG - response_closed.started
+[ 2026-11-16 20:28:23,077 ] httpcore.http11 -DEBUG - response_closed.complete
+[ 2026-11-16 20:28:23,077 ] httpcore.connection -DEBUG - close.started
+[ 2026-11-16 20:28:23,078 ] httpcore.connection -DEBUG - close.complete
+[ 2026-11-16 20:28:23,090 ] dagshub -INFO - Initialized MLflow to track repo "rkadey/data_science_albert"
+[ 2026-11-16 20:28:23,091 ] dagshub -INFO - Repository rkadey/data_science_albert initialized!
+[ 2026-11-16 20:28:23,091 ] root -INFO - DagsHub MLflow tracking enabled for rkadey/data_science_albert
+[ 2026-11-16 20:28:23,296 ] urllib3.connectionpool -DEBUG - Starting new HTTPS connection (1): dagshub.com:443
+[ 2026-11-16 20:28:25,010 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "GET /rkadey/data_science_albert.mlflow/api/2.0/mlflow/experiments/get-by-name?experiment_name=wine_classification HTTP/1.1" 200 None
+[ 2026-11-16 20:28:25,013 ] root -INFO - MLflow experiment 'wine_classification' active at https://dagshub.com/rkadey/data_science_albert.mlflow
+[ 2026-11-16 20:28:25,013 ] root -INFO - Experiment tracking configured at https://dagshub.com/rkadey/data_science_albert.mlflow
+[ 2026-11-16 20:28:25,064 ] root -INFO - Using neuro_mf to get best model object and report
+[ 2026-11-16 20:28:25,067 ] neuro_mf -INFO - Started Initializing model from config file
+[ 2026-11-16 20:28:25,067 ] neuro_mf -INFO - {'max_iter': 100}
+[ 2026-11-16 20:28:25,068 ] neuro_mf -INFO - {'random_state': 42}
+[ 2026-11-16 20:28:25,068 ] neuro_mf -INFO - {'random_state': 42}
+[ 2026-11-16 20:28:25,074 ] neuro_mf -INFO - Initialized model: [InitializedModelDetail(model_serial_number='module_0', model=LogisticRegression(), param_grid_search={'C': [0.1, 1.0, 10.0]}, model_name='sklearn.linear_model.LogisticRegression'), InitializedModelDetail(model_serial_number='module_2', model=RandomForestClassifier(random_state=42), param_grid_search={'n_estimators': [100, 300], 'max_depth': [4, 8, None]}, model_name='sklearn.ensemble.RandomForestClassifier'), InitializedModelDetail(model_serial_number='module_3', model=GradientBoostingClassifier(random_state=42), param_grid_search={'n_estimators': [100, 200], 'learning_rate': [0.05, 0.1]}, model_name='sklearn.ensemble.GradientBoostingClassifier')]
+[ 2026-11-16 20:28:25,076 ] neuro_mf -INFO - ('**************************************************', 'training LogisticRegression', '**************************************************')
+[ 2026-11-16 20:28:25,076 ] neuro_mf -INFO - {'cv': 5, 'verbose': 1, 'n_jobs': -1, 'scoring': 'f1_weighted'}
+[ 2026-11-16 20:28:40,725 ] neuro_mf -INFO - ('**************************************************', 'training RandomForestClassifier', '**************************************************')
+[ 2026-11-16 20:28:40,725 ] neuro_mf -INFO - {'cv': 5, 'verbose': 1, 'n_jobs': -1, 'scoring': 'f1_weighted'}
+[ 2026-11-16 20:28:45,271 ] neuro_mf -INFO - ('**************************************************', 'training GradientBoostingClassifier', '**************************************************')
+[ 2026-11-16 20:28:45,271 ] neuro_mf -INFO - {'cv': 5, 'verbose': 1, 'n_jobs': -1, 'scoring': 'f1_weighted'}
+[ 2026-11-16 20:28:50,128 ] neuro_mf -INFO - Acceptable model found:GridSearchedBestModel(model_serial_number='module_0', model=LogisticRegression(), best_model=LogisticRegression(), best_parameters={'C': 1.0}, best_score=np.float64(0.3162789743079234))
+[ 2026-11-16 20:28:50,129 ] neuro_mf -INFO - Acceptable model found:GridSearchedBestModel(model_serial_number='module_2', model=RandomForestClassifier(random_state=42), best_model=RandomForestClassifier(random_state=42), best_parameters={'max_depth': None, 'n_estimators': 100}, best_score=np.float64(0.32887026377267503))
+[ 2026-11-16 20:28:50,129 ] neuro_mf -INFO - Best model: GridSearchedBestModel(model_serial_number='module_2', model=RandomForestClassifier(random_state=42), best_model=RandomForestClassifier(random_state=42), best_parameters={'max_depth': None, 'n_estimators': 100}, best_score=np.float64(0.32887026377267503))
+[ 2026-11-16 20:28:50,148 ] root -INFO - Best model: RandomForestClassifier | test metrics: ClassificationMetricArtifact(f1_score=0.3181193205190532, precision_score=0.317773262197214, recall_score=0.32) | accuracy: 0.3200
+[ 2026-11-16 20:28:50,149 ] root -WARNING - Best model f1 score 0.3181 is below the expected 0.6. The model is still saved and logged so the run can be reviewed on DagsHub.
+[ 2026-11-16 20:28:50,149 ] root -INFO - Entered the load_object method of utils
+[ 2026-11-16 20:28:50,245 ] root -INFO - Exited the load_object method of utils
+[ 2026-11-16 20:28:50,245 ] root -INFO - Entered the save_object method of utils
+[ 2026-11-16 20:28:50,399 ] root -INFO - Exited the save_object method of utils
+[ 2026-11-16 20:28:50,399 ] root -INFO - Saved WineModel to artifact\2026-11-16_20-28-01\model_trainer\trained_model\model.pkl
+[ 2026-11-16 20:28:51,033 ] git.cmd -DEBUG - Popen(['git', 'version'], cwd=C:\Users\rkadey\Documents\data_science_ml_dev, stdin=None, shell=False, universal_newlines=False)
+[ 2026-11-16 20:28:51,536 ] git.cmd -DEBUG - Popen(['git', 'version'], cwd=C:\Users\rkadey\Documents\data_science_ml_dev, stdin=None, shell=False, universal_newlines=False)
+[ 2026-11-16 20:28:51,801 ] git.util -DEBUG - sys.platform='win32', git_executable='git'
+[ 2026-11-16 20:28:51,804 ] git.cmd -DEBUG - Popen(['git', 'check-ignore', '--', 'c:\\Users\\rkadey\\Documents\\data_science_ml_dev\\data_science_ml\\components'], cwd=c:\Users\rkadey\Documents\data_science_ml_dev, stdin=None, shell=False, universal_newlines=False)
+[ 2026-11-16 20:28:52,133 ] git.cmd -DEBUG - Popen(['git', 'cat-file', '--batch-check'], cwd=c:\Users\rkadey\Documents\data_science_ml_dev, stdin=<valid stream>, shell=False, universal_newlines=False)
+[ 2026-11-16 20:28:53,020 ] git.util -DEBUG - sys.platform='win32', git_executable='git'
+[ 2026-11-16 20:28:53,036 ] git.util -DEBUG - sys.platform='win32', git_executable='git'
+[ 2026-11-16 20:28:53,106 ] urllib3.connectionpool -DEBUG - Starting new HTTPS connection (1): dagshub.com:443
+[ 2026-11-16 20:28:59,168 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "POST /rkadey/data_science_albert.mlflow/api/2.0/mlflow/runs/create HTTP/1.1" 200 None
+[ 2026-11-16 20:28:59,171 ] urllib3.connectionpool -DEBUG - Starting new HTTPS connection (1): config.mlflow-telemetry.io:443
+[ 2026-11-16 20:28:59,656 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "POST /rkadey/data_science_albert.mlflow/api/2.0/mlflow/runs/log-batch HTTP/1.1" 200 2
+[ 2026-11-16 20:29:00,163 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "POST /rkadey/data_science_albert.mlflow/api/2.0/mlflow/runs/log-batch HTTP/1.1" 200 2
+[ 2026-11-16 20:29:00,272 ] urllib3.connectionpool -DEBUG - https://config.mlflow-telemetry.io:443 "GET /3.18.0.json HTTP/1.1" 200 308
+[ 2026-11-16 20:29:00,620 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "POST /rkadey/data_science_albert.mlflow/api/2.0/mlflow/runs/log-batch HTTP/1.1" 200 2
+[ 2026-11-16 20:29:01,086 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "POST /rkadey/data_science_albert.mlflow/api/2.0/mlflow/runs/log-batch HTTP/1.1" 200 2
+[ 2026-11-16 20:29:01,289 ] urllib3.connectionpool -DEBUG - Starting new HTTPS connection (1): dagshub.com:443
+[ 2026-11-16 20:29:01,516 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "POST /rkadey/data_science_albert.mlflow/api/2.0/mlflow/runs/log-metric HTTP/1.1" 200 2
+[ 2026-11-16 20:29:01,931 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "POST /rkadey/data_science_albert.mlflow/api/2.0/mlflow/runs/log-metric HTTP/1.1" 200 2
+[ 2026-11-16 20:29:02,483 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "POST /rkadey/data_science_albert.mlflow/api/2.0/mlflow/runs/log-metric HTTP/1.1" 200 2
+[ 2026-11-16 20:29:02,889 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "GET /rkadey/data_science_albert.mlflow/api/3.0/mlflow/server-info HTTP/1.1" 404 None
+[ 2026-11-16 20:29:02,893 ] urllib3.connectionpool -DEBUG - Starting new HTTPS connection (1): api.mlflow-telemetry.io:443
+[ 2026-11-16 20:29:02,928 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "GET /rkadey/data_science_albert.mlflow/api/2.0/mlflow/runs/get?run_uuid=0001288f182e4d53a838c0c08a900f6b&run_id=0001288f182e4d53a838c0c08a900f6b HTTP/1.1" 200 None
+[ 2026-11-16 20:29:04,254 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "POST /rkadey/data_science_albert.mlflow/api/2.0/mlflow/logged-models HTTP/1.1" 200 None
+[ 2026-11-16 20:29:04,503 ] urllib3.connectionpool -DEBUG - https://api.mlflow-telemetry.io:443 "POST /log HTTP/1.1" 200 30
+[ 2026-11-16 20:29:05,139 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "POST /rkadey/data_science_albert.mlflow/api/2.0/mlflow/runs/outputs HTTP/1.1" 200 2
+[ 2026-11-16 20:29:05,605 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "GET /rkadey/data_science_albert.mlflow/api/2.0/mlflow/runs/get?run_uuid=0001288f182e4d53a838c0c08a900f6b&run_id=0001288f182e4d53a838c0c08a900f6b HTTP/1.1" 200 None
+[ 2026-11-16 20:29:06,215 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "GET /rkadey/data_science_albert.mlflow/api/2.0/mlflow/metrics/get-history?run_uuid=0001288f182e4d53a838c0c08a900f6b&metric_key=cv_best_score&run_id=0001288f182e4d53a838c0c08a900f6b&max_results=25000 HTTP/1.1" 200 None
+[ 2026-11-16 20:29:06,732 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "GET /rkadey/data_science_albert.mlflow/api/2.0/mlflow/metrics/get-history?run_uuid=0001288f182e4d53a838c0c08a900f6b&metric_key=test_accuracy&run_id=0001288f182e4d53a838c0c08a900f6b&max_results=25000 HTTP/1.1" 200 None
+[ 2026-11-16 20:29:07,188 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "GET /rkadey/data_science_albert.mlflow/api/2.0/mlflow/metrics/get-history?run_uuid=0001288f182e4d53a838c0c08a900f6b&metric_key=test_f1_weighted&run_id=0001288f182e4d53a838c0c08a900f6b&max_results=25000 HTTP/1.1" 200 None
+[ 2026-11-16 20:29:07,667 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "GET /rkadey/data_science_albert.mlflow/api/2.0/mlflow/metrics/get-history?run_uuid=0001288f182e4d53a838c0c08a900f6b&metric_key=test_precision_weighted&run_id=0001288f182e4d53a838c0c08a900f6b&max_results=25000 HTTP/1.1" 200 None
+[ 2026-11-16 20:29:11,541 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "GET /rkadey/data_science_albert.mlflow/api/2.0/mlflow/metrics/get-history?run_uuid=0001288f182e4d53a838c0c08a900f6b&metric_key=test_recall_weighted&run_id=0001288f182e4d53a838c0c08a900f6b&max_results=25000 HTTP/1.1" 200 None
+[ 2026-11-16 20:29:11,582 ] urllib3.connectionpool -DEBUG - Starting new HTTPS connection (1): api.mlflow-telemetry.io:443
+[ 2026-11-16 20:29:13,023 ] urllib3.connectionpool -DEBUG - https://api.mlflow-telemetry.io:443 "POST /log HTTP/1.1" 200 30
+[ 2026-11-16 20:29:15,840 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "GET /rkadey/data_science_albert.mlflow/api/2.0/mlflow/metrics/get-history?run_uuid=0001288f182e4d53a838c0c08a900f6b&metric_key=cv_score_RandomForestClassifier&run_id=0001288f182e4d53a838c0c08a900f6b&max_results=25000 HTTP/1.1" 200 None
+[ 2026-11-16 20:29:16,434 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "GET /rkadey/data_science_albert.mlflow/api/2.0/mlflow/metrics/get-history?run_uuid=0001288f182e4d53a838c0c08a900f6b&metric_key=cv_score_LogisticRegression&run_id=0001288f182e4d53a838c0c08a900f6b&max_results=25000 HTTP/1.1" 200 None
+[ 2026-11-16 20:29:16,831 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "GET /rkadey/data_science_albert.mlflow/api/2.0/mlflow/metrics/get-history?run_uuid=0001288f182e4d53a838c0c08a900f6b&metric_key=cv_score_GradientBoostingClassifier&run_id=0001288f182e4d53a838c0c08a900f6b&max_results=25000 HTTP/1.1" 200 None
+[ 2026-11-16 20:29:17,352 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "POST /rkadey/data_science_albert.mlflow/api/2.0/mlflow/runs/log-batch HTTP/1.1" 200 2
+[ 2026-11-16 20:29:22,123 ] urllib3.connectionpool -DEBUG - Starting new HTTPS connection (1): api.mlflow-telemetry.io:443
+[ 2026-11-16 20:29:23,411 ] urllib3.connectionpool -DEBUG - https://api.mlflow-telemetry.io:443 "POST /log HTTP/1.1" 200 30
+[ 2026-11-16 20:29:55,353 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "GET /rkadey/data_science_albert.mlflow/api/2.0/mlflow/logged-models/m-d2e43f4643b94e9a80ce34dad157ed46 HTTP/1.1" 200 None
+[ 2026-11-16 20:29:55,810 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "GET /rkadey/data_science_albert.mlflow/api/3.0/mlflow/server-info HTTP/1.1" 404 None
+[ 2026-11-16 20:29:55,873 ] urllib3.connectionpool -DEBUG - Starting new HTTPS connection (1): dagshub.com:443
+[ 2026-11-16 20:29:57,506 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "PUT /rkadey/data_science_albert.mlflow/api/2.0/mlflow-artifacts/artifacts/e64de4eb902648aea656dde38e089d6d/models/m-d2e43f4643b94e9a80ce34dad157ed46/artifacts/conda.yaml HTTP/1.1" 200 2
+[ 2026-11-16 20:29:58,760 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "PUT /rkadey/data_science_albert.mlflow/api/2.0/mlflow-artifacts/artifacts/e64de4eb902648aea656dde38e089d6d/models/m-d2e43f4643b94e9a80ce34dad157ed46/artifacts/input_example.json HTTP/1.1" 200 2
+[ 2026-11-16 20:29:59,292 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "PUT /rkadey/data_science_albert.mlflow/api/2.0/mlflow-artifacts/artifacts/e64de4eb902648aea656dde38e089d6d/models/m-d2e43f4643b94e9a80ce34dad157ed46/artifacts/MLmodel HTTP/1.1" 200 2
+[ 2026-11-16 20:30:02,773 ] urllib3.connectionpool -DEBUG - Starting new HTTPS connection (1): api.mlflow-telemetry.io:443
+[ 2026-11-16 20:30:04,210 ] urllib3.connectionpool -DEBUG - https://api.mlflow-telemetry.io:443 "POST /log HTTP/1.1" 200 30
+[ 2026-11-16 20:30:12,231 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "PUT /rkadey/data_science_albert.mlflow/api/2.0/mlflow-artifacts/artifacts/e64de4eb902648aea656dde38e089d6d/models/m-d2e43f4643b94e9a80ce34dad157ed46/artifacts/model.pkl HTTP/1.1" 200 2
+[ 2026-11-16 20:30:13,250 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "PUT /rkadey/data_science_albert.mlflow/api/2.0/mlflow-artifacts/artifacts/e64de4eb902648aea656dde38e089d6d/models/m-d2e43f4643b94e9a80ce34dad157ed46/artifacts/python_env.yaml HTTP/1.1" 200 2
+[ 2026-11-16 20:30:13,764 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "PUT /rkadey/data_science_albert.mlflow/api/2.0/mlflow-artifacts/artifacts/e64de4eb902648aea656dde38e089d6d/models/m-d2e43f4643b94e9a80ce34dad157ed46/artifacts/requirements.txt HTTP/1.1" 200 2
+[ 2026-11-16 20:30:14,225 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "PUT /rkadey/data_science_albert.mlflow/api/2.0/mlflow-artifacts/artifacts/e64de4eb902648aea656dde38e089d6d/models/m-d2e43f4643b94e9a80ce34dad157ed46/artifacts/serving_input_example.json HTTP/1.1" 200 2
+[ 2026-11-16 20:30:16,334 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "PATCH /rkadey/data_science_albert.mlflow/api/2.0/mlflow/logged-models/m-d2e43f4643b94e9a80ce34dad157ed46 HTTP/1.1" 200 None
+[ 2026-11-16 20:30:18,790 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "GET /rkadey/data_science_albert.mlflow/api/2.0/mlflow/runs/get?run_uuid=0001288f182e4d53a838c0c08a900f6b&run_id=0001288f182e4d53a838c0c08a900f6b HTTP/1.1" 200 None
+[ 2026-11-16 20:30:19,361 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "GET /rkadey/data_science_albert.mlflow/api/3.0/mlflow/server-info HTTP/1.1" 404 None
+[ 2026-11-16 20:30:20,807 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "PUT /rkadey/data_science_albert.mlflow/api/2.0/mlflow-artifacts/artifacts/e64de4eb902648aea656dde38e089d6d/0001288f182e4d53a838c0c08a900f6b/artifacts/config/model.yaml HTTP/1.1" 200 2
+[ 2026-11-16 20:30:21,266 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "PUT /rkadey/data_science_albert.mlflow/api/2.0/mlflow-artifacts/artifacts/e64de4eb902648aea656dde38e089d6d/0001288f182e4d53a838c0c08a900f6b/artifacts/preprocessing/preprocessing.pkl HTTP/1.1" 200 2
+[ 2026-11-16 20:30:23,437 ] urllib3.connectionpool -DEBUG - Starting new HTTPS connection (1): api.mlflow-telemetry.io:443
+[ 2026-11-16 20:30:24,854 ] urllib3.connectionpool -DEBUG - https://api.mlflow-telemetry.io:443 "POST /log HTTP/1.1" 200 30
+[ 2026-11-16 20:30:33,486 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "PUT /rkadey/data_science_albert.mlflow/api/2.0/mlflow-artifacts/artifacts/e64de4eb902648aea656dde38e089d6d/0001288f182e4d53a838c0c08a900f6b/artifacts/trained_model/model.pkl HTTP/1.1" 200 2
+[ 2026-11-16 20:30:33,487 ] root -INFO - MLflow run 0001288f182e4d53a838c0c08a900f6b logged to https://dagshub.com/rkadey/data_science_albert.mlflow
+[ 2026-11-16 20:30:33,913 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "GET /rkadey/data_science_albert.mlflow/api/2.0/mlflow/runs/get?run_uuid=0001288f182e4d53a838c0c08a900f6b&run_id=0001288f182e4d53a838c0c08a900f6b HTTP/1.1" 200 None
+[ 2026-11-16 20:30:34,355 ] urllib3.connectionpool -DEBUG - https://dagshub.com:443 "POST /rkadey/data_science_albert.mlflow/api/2.0/mlflow/runs/update HTTP/1.1" 200 None
+[ 2026-11-16 20:30:34,357 ] root -INFO - Training run logged to MLflow with run_id=0001288f182e4d53a838c0c08a900f6b
+[ 2026-11-16 20:30:34,357 ] root -INFO - Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\2026-11-16_20-28-01\\model_trainer\\trained_model\\model.pkl', metric_artifact=ClassificationMetricArtifact(f1_score=0.3181193205190532, precision_score=0.317773262197214, recall_score=0.32))
